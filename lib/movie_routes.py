@@ -1,5 +1,5 @@
 from lib.database_connection import get_flask_database_connection
-from flask import request
+from flask import Flask, request, render_template, redirect
 from lib.movie import Movie
 from lib.movie_repo import MovieRepository
 
@@ -9,7 +9,7 @@ def apply_movie_routes(app):
         connection = get_flask_database_connection(app)
         repository = MovieRepository(connection)
         movies = repository.all()
-        return ", ".join(movie.title for movie in movies)
+        return render_template('index.html', movies = movies)
     
     @app.route('/movies', methods = ['POST'])
     def post_movie():
