@@ -16,6 +16,21 @@
       border-radius: 8px;
     }
 
+    img {
+        width: 100%;
+        max-width: 1200px; 
+        height: auto; 
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .grid-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
     .grid-top-movie {
       background-color: #6c03a9;
       padding: 20px;
@@ -45,21 +60,25 @@
 <body>
     <h1 class="Title"> Movies </h1>
 
-    <ul class="grid-top-movie">
-        {% for movie in movies %}
-            {% if movie.id == 1%}
-                <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    <div class=grid-container>
+        <p> <img src="static/images/Inception_banner.png"/> <br> </p>
+        
+        <ul class="grid-top-movie">
+            {% for movie in movies %}
+                {% if movie.id == 1%}
+                    <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
 
-    <ul class="grid-list">
-        {% for movie in movies %}
-            {% if movie.id > 1%}
-                <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+        <ul class="grid-list">
+            {% for movie in movies %}
+                {% if movie.id > 1%}
+                    <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
  
 
 </body>
