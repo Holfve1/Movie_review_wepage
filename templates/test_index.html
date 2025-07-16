@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <title>Grid List</title>
   <style>
+
+    ul {
+        list-style-type: none;
+    }
+
+    .Title {
+      color: #d42323;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .grid-top-movie {
+      background-color: #6c03a9;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
     .grid-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -19,33 +38,28 @@
       border-radius: 8px;
     }
 
-    .Title {
-      color: #d42323;
-      padding: 20px;
-      text-align: center;
-      border-radius: 8px;
-    }
+
 
   </style>
 </head>
 <body>
     <h1 class="Title"> Movies </h1>
 
-    <ol class="grid-list">
+    <ul class="grid-top-movie">
         {% for movie in movies %}
             {% if movie.id == 1%}
                 <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
             {% endif %}
         {% endfor %}
-    </ol>
+    </ul>
 
-    <ol class="grid-list">
+    <ul class="grid-list">
         {% for movie in movies %}
             {% if movie.id > 1%}
                 <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
             {% endif %}
         {% endfor %}
-    </ol>
+    </ul>
  
 
 </body>
