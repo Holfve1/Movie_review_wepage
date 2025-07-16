@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid List</title>
+  <style>
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .grid-list li {
+      background-color: #1960b0;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .Title {
+      color: #d42323;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+    <h1 class="Title"> Movies </h1>
+
+    <ol class="grid-list">
+        {% for movie in movies %}
+            {% if movie.id == 1%}
+                <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+
+    <ol class="grid-list">
+        {% for movie in movies %}
+            {% if movie.id > 1%}
+                <li> {{movie.title}} <br> <hr> Release Year: {{movie.release_year}} <br> Genre: {{movie.genre}} </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+ 
+
+</body>
+</html>

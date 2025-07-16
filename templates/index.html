@@ -9,10 +9,47 @@
         <div>
             <ol> 
                 {% for movie in movies %}
-                    <li> {{movie.title}}</li>
+                    <li> {{movie.title}} <br> <hr> <br> </li>
                 {% endfor %}
             </ol>
         </div>
 
     </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid List</title>
+  <style>
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .grid-list li {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="grid-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+  </ul>
+
+</body>
 </html>
